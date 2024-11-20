@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabrik Kripik Rumah Adat Minang</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: rgb(227, 197, 134);
+            background: linear-gradient(185deg, rgba(227,169,134,1) 9%, rgba(167,67,0,1) 99%);            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .container2 {
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGGnM6nO42XETm8UHWorQAin4HxlOt7rZAEiImqwR2JOTcqPVg8kW68xHgyau6lYR8D60t6_yAM1Ex7u85tEgu202NJXB415W7iyHtQukp2f-fW1eslkSc3wm31-dRJ_HEjDvV6kBxZ6A0wyYmxTFmMeI2OJtOw1epl0b69GKVr7alasmqGI2dZ1sq4Md9/s1600/Desain%20tanpa%20judul.png'); 
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 400px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+form2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 200px; 
+}
+
+        input[type="text"], input[type="number"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+input[type="text"], input[type="password"] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: transparent; 
+    color: black; 
+    margin-left: 55px;
+    margin-bottom: 10px; 
+}
+
+        button {
+            background-color: #995226;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        
+
+button2 {
+    background: #9b3c01;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 25%;
+    margin-top: -20px; 
+    margin-left: 30px;
+}
+
+        .add-button {
+            font-size: 24px;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #9b3c01;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #1abc9c;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .input-grid > div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-container {
+            background-color: #a5d6a7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .grid-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            background-color: #fedfe6;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .grid-display > div {
+            background-color: #fff7f9;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #8bc34a;
+            border-radius: 5px;
+        }
+
+        .product-name {
+            background-color: #DE3163;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            color: #7c3000;
+            margin-bottom: 20px;
+        }
+
+h3 {
+            text-align: center;
+            color: #762505;
+            font-size: 25px;
+            margin-bottom: 20px;
+            margin-left: 245px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #8bc34a;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .result-section {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container2 slide active" id="slide1">
+        <h3>Login</h3>
+        <form2 id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+    
+            <br><br>
+            <button2 type="button2" onclick="login()">Login</button2>
+        </form>
+    </div>
+    
+    <div class="container slide" id="slide2">
+        <h2>Forum Produk</h2>
+        <form id="bahanForm">
+            <label for="namaProduk">Nama Produk</label>
+            <input type="text" id="namaProduk" name="namaProduk" required>
+    
+            <label for="hargaProduk">Harga Produk</label>
+            <input type="number" id="hargaProduk" name="hargaProduk" required>
+    
+            <div id="bahanContainer">
+                <div class="input-grid">
+                    <div>
+                        <label for="bahan1">Bahan</label>
+                        <input type="text" id="bahan1" name="bahan[]" required>
+                    </div>
+                    <div>
+                        <label for="berat1">Berat</label>
+                        <input type="number" id="berat1" name="berat[]" required>
+                    </div>
+                    <div>
+                        <label for="unit1">Unit</label>
+                        <select id="unit1" name="unit[]">
+                            <option value="gram">gram</option>
+                            <option value="kg">kilogram</option>
+                            <option value="liter">liter</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="hargaBahan1">Harga per Unit</label>
+                        <input type="number" id="hargaBahan1" name="hargaBahan[]" required>
+                    </div>
+                </div>
+            </div>
+    
+            <button type="button" class="add-button" onclick="addBahan()">+</button>
+            <br><br>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    
+    <div class="container slide" id="slide3">
+        <h2>Forum Persediaan Bahan</h2>
+        <div class="product-name" id="displayNamaProduk">Nama Produk</div>
+        
+        
+        <div class="grid-display">
+            <div><strong>Bahan-Bahan</strong></div>
+            <div><strong>Berat</strong></div>
+            <div><strong>Unit</strong></div>
+            <div><strong>Harga per Unit</strong></div>
+        </div>
+        
+        
+        <div class="grid-display" id="gridBahanDisplay"></div>
+    
+        <br>
+        <button type="button" onclick="calculateSimplex()">Lanjut ke Perhitungan Simplex</button>
+    </div>
+    
+    <div class="container slide" id="slide4">
+        <h2>Hasil Perhitungan Simplex</h2>
+        <div class="result-section">
+            <strong>Nama Produk:</strong> <span id="resultNamaProduk"></span><br><br>
+            <strong>Harga Produk:</strong> Rp <span id="resultHargaProduk"></span><br><br>
+            <strong>Volume Keripik:</strong> <span id="resultVolumeKeripik"></span><br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bahan</th>
+                        <th>Berat</th>
+                        <th>Unit</th>
+                        <th>Harga per Unit (Rp)</th>
+                        <th>Total Harga (Rp)</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable">
+                    
+                </tbody>
+            </table>
+            <br>
+            <strong>Total Biaya:</strong> Rp <span id="totalBiaya"></span><br>
+            <strong>Harga Jual Produk:</strong> Rp <span id="hargaJual"></span><br>
+            <strong>Keuntungan:</strong> Rp <span id="profit"></span>
+        </div>
+    </div>
+    
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            if (username === 'fanny29' && password === '031122') {
+                document.getElementById('slide1').classList.remove('active');
+                document.getElementById('slide2').classList.add('active');
+            }else if (username === 'martha03' && password === '123456') {
+                document.getElementById('slide1').classList.remove('active');
+                document.getElementById('slide2').classList.add('active');
+            }else if (username === 'eddies21' && password === '654321') {
+                document.getElementById('slide1').classList.remove('active');
+                document.getElementById('slide2').classList.add('active'); 
+            } else {
+                alert('Username atau password salah !!');
+            }
+        }
+    
+        let bahanCount = 1;
+    
+        function addBahan() {
+            bahanCount++;
+            const bahanContainer = document.getElementById('bahanContainer');
+    
+            const inputGroup = document.createElement('div');
+            inputGroup.classList.add('input-grid');
+            inputGroup.innerHTML = `
+                <div>
+                    <label for="bahan${bahanCount}">Bahan</label>
+                    <input type="text" id="bahan${bahanCount}" name="bahan[]" required>
+                </div>
+                <div>
+                    <label for="berat${bahanCount}">Berat</label>
+                    <input type="number" id="berat${bahanCount}" name="berat[]" required>
+                </div>
+                <div>
+                    <label for="unit${bahanCount}">Unit</label>
+                    <select id="unit${bahanCount}" name="unit[]">
+                        <option value="gram">gram</option>
+                        <option value="kg">kilogram</option>
+                        <option value="liter">liter</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="hargaBahan${bahanCount}">Harga per Unit</label>
+                    <input type="number" id="hargaBahan${bahanCount}" name="hargaBahan[]" required>
+                </div>
+            `;
+    
+            bahanContainer.appendChild(inputGroup);
+        }
+    
+        function submitForm() {
+            const namaProduk = document.getElementById('namaProduk').value;
+            const bahanInputs = document.querySelectorAll('input[name="bahan[]"]');
+            const beratInputs = document.querySelectorAll('input[name="berat[]"]');
+            const unitInputs = document.querySelectorAll('select[name="unit[]"]');
+            const hargaBahanInputs = document.querySelectorAll('input[name="hargaBahan[]"]');
+            
+            
+            document.getElementById('gridBahanDisplay').innerHTML = '';
+    
+            
+            document.getElementById('displayNamaProduk').textContent = namaProduk;
+    
+            
+            for (let i = 0; i < bahanInputs.length; i++) {
+                const bahanItem = document.createElement('div');
+                bahanItem.textContent = bahanInputs[i].value;
+                const beratItem = document.createElement('div');
+                beratItem.textContent = beratInputs[i].value;
+                const unitItem = document.createElement('div');
+                unitItem.textContent = unitInputs[i].value;
+                const hargaItem = document.createElement('div');
+                hargaItem.textContent = hargaBahanInputs[i].value;
+    
+                document.getElementById('gridBahanDisplay').appendChild(bahanItem);
+                document.getElementById('gridBahanDisplay').appendChild(beratItem);
+                document.getElementById('gridBahanDisplay').appendChild(unitItem);
+                document.getElementById('gridBahanDisplay').appendChild(hargaItem);
+            }
+    
+            
+            document.getElementById('slide2').classList.remove('active');
+            document.getElementById('slide3').classList.add('active');
+        }
+    
+        function calculateSimplex() {
+            const namaProduk = document.getElementById('namaProduk').value;
+            const hargaProduk = document.getElementById('hargaProduk').value;
+            const bahanInputs = document.querySelectorAll('input[name="bahan[]"]');
+            const beratInputs = document.querySelectorAll('input[name="berat[]"]');
+            const unitInputs = document.querySelectorAll('select[name="unit[]"]');
+            const hargaBahanInputs = document.querySelectorAll('input[name="hargaBahan[]"]');
+            
+            
+            let totalBiaya = 0;
+            let totalVolume = 0;
+    
+            document.getElementById('resultTable').innerHTML = '';
+    
+            for (let i = 0; i < bahanInputs.length; i++) {
+                const bahan = bahanInputs[i].value;
+                const berat = beratInputs[i].value;
+                const unit = unitInputs[i].value;
+                const hargaPerUnit = hargaBahanInputs[i].value;
+                const totalHarga = berat * hargaPerUnit;
+                totalBiaya += totalHarga;
+    
+                if (!berat || berat <= 0) {
+                alert("Berat bahan ke-${i + 1} harus diisi dengan benar!");
+                return;
+            }
+    
+                const volume = berat * 0.001;
+                totalVolume += volume;
+    
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bahan}</td>
+                    <td>${berat}</td>
+                    <td>${unit}</td>
+                    <td>${hargaPerUnit}</td>
+                    <td>${totalHarga}</td>
+                `;
+                document.getElementById('resultTable').appendChild(row);
+            }
+    
+            const profit = hargaProduk - totalBiaya;
+    
+            document.getElementById('resultNamaProduk').textContent = namaProduk;
+            document.getElementById('resultHargaProduk').textContent = hargaProduk;
+            document.getElementById('totalBiaya').textContent = totalBiaya;
+            document.getElementById('hargaJual').textContent = hargaProduk;
+            document.getElementById('profit').textContent = profit;
+            document.getElementById('resultVolumeKeripik').textContent = totalVolume.toFixed(2); 
+    
+    
+            
+            document.getElementById('slide3').classList.remove('active');
+            document.getElementById('slide4').classList.add('active');
+        }
+    </script>
+    
+    </body>
+    </html>
