@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Optimasi dengan Metode Simplex</h1>
+<form method="POST">
+    <label>Profit (contoh: 5,4):</label><br>
+    <input type="text" name="profit" required><br><br>
+
+    <label>Constraints (contoh: 1,1 lalu enter 2,1):</label><br>
+    <textarea name="constraints" required></textarea><br><br>
+
+    <label>Bounds (contoh: 10,8):</label><br>
+    <input type="text" name="bounds" required><br><br>
+
+    <button type="submit">Hitung</button>
+</form>
+
+{% if result %}
+    <h2>Hasil:</h2>
+    <p>Nilai Optimal: {{ optimal_value }}</p>
+    <p>Solusi Optimal: {{ optimal_solution }}</p>
+{% elif error %}
+    <p style="color:red;">Error: {{ error }}</p>
+{% endif %}
+{% endblock %}
